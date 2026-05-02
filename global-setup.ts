@@ -13,8 +13,8 @@ async function globalSetup(config: FullConfig) {
   const page = await context.pages().length ? context.pages()[0] : await context.newPage();
   await page.goto('https://www.amazon.in', { waitUntil: 'domcontentloaded' });
 
-  //Pause for login
-  await page.waitForTimeout(10000);
+  // pause for login enter your login credentials to store the session
+  await page.waitForTimeout(30000);
 
   await context.storageState({ path: 'storageState.json' });
   await context.close();
